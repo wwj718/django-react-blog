@@ -51,7 +51,7 @@ module.exports = {
             src + 'js/app.js',
             src + 'js/**/*.js'
         ],
-        dest: src + 'js',
+        dest: dest + 'js',
         settings: {
             bare: true
         }
@@ -72,12 +72,14 @@ module.exports = {
     // Handle minimizing JS Files into a single file
     browserify: {
         extensions: [],
-        transform: [],
+        transform: [
+            'reactify'
+        ],
         bundleConfigs: [
             {
               entries: src + 'js/app.js',
               dest: dest + 'js',
-              outputName: 'app.js'
+              outputName: 'app_dist.js'
             }
         ]
     },

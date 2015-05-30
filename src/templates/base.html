@@ -25,18 +25,19 @@
 </head>
 <body>
 
-<div id="wrapper">{% block content %}{% endblock %}</div>
+    <div id="wrapper">{% block content %}{% endblock %}</div>
 
-<script src="{% static 'js/dependencies.js' %}"></script>
-<script src="{% static 'js/app.js' %}"></script>
+    {% block props %}{% endblock %}
 
-{% if debug %}
-<script type='text/javascript' id="__bs_script__">
-//<![CDATA[
-    document.write("<script async src='http://HOST:8001/browser-sync/browser-sync-client.2.7.6.js'><\/script>".replace("HOST", location.hostname));
-//]]>
+    <script src="{% static 'js/dependencies.js' %}"></script>
+    <script src="{% static 'js/app_dist.js' %}"></script>
+
+    {% if debug %}
+    <script type='text/javascript' id="__bs_script__">
+    //<![CDATA[
+        document.write("<script async src='http://HOST:8001/browser-sync/browser-sync-client.2.7.6.js'><\/script>".replace("HOST", location.hostname));
+    //]]>
     </script>
-{% endif %}
-
+    {% endif %}
 </body>
 </html>
