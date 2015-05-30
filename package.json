@@ -25,6 +25,7 @@
   "dependencies": {
     "express": "^4.12.4",
     "flux": "^2.0.3",
+    "node-jsx": "^0.13.3",
     "react": "^0.13.3",
     "superagent": "^1.2.0",
     "underscore": "^1.8.3"
