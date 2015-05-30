@@ -21,6 +21,7 @@ sys.path.insert(0, os.path.join(SRC_DIR, 'apps'))
 DEBUG = False
 TEMPLATE_DEBUG = False
 ALLOWED_HOSTS = ['*']
+INTERNAL_IPS = ('127.0.0.1',)
 ROOT_URLCONF = 'src.core.urls'
 WSGI_APPLICATION = 'src.core.wsgi.application'
 # AUTH_USER_MODEL = 'authentication.Account'
@@ -76,7 +77,7 @@ USE_TZ = True
 ###############################################################################
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(REPO_DIR, 'var', 'www', 'static')
+STATIC_ROOT = os.path.join(REPO_DIR, 'var', 'www')
 STATICFILES_DIRS = (
     os.path.join(SRC_DIR, 'static'),
 )
@@ -101,3 +102,9 @@ TEMPLATES = [
         },
     },
 ]
+
+###############################################################################
+## Application Specific Settings
+###############################################################################
+
+NODE_SERVER = 'http://0.0.0.0:4000'

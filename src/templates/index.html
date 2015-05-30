@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}{{ blog_component }}{% endblock %}
+
+{% block props %}
+    <script type="text/javascript">
+        document.props = {{ props | safe }};
+    </script>
+{% endblock %}

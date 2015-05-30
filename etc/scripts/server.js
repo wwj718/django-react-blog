@@ -5,12 +5,12 @@ var app             = express();
 
 jsx_compiler.install();
 
-// var App         = require('./components/App.react');
-// var MyApp       = React.createFactory(App);
+var Blog            = require('../../src/static/js/components/Blog.react');
+var BlogFactory     = React.createFactory(Blog);
 
-// var Components = {
-//     MyApp: MyApp
-// };
+var Components = {
+    Blog: BlogFactory
+};
 
 app.get('/', function (req, res) {
     var data = JSON.parse(req.query.data);
