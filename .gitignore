@@ -1,0 +1,4 @@
+src/core/settings/local.py
+src/static/third-party/
+node_modules/
+var/www/

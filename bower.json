@@ -1,0 +1,30 @@
+{
+  "name": "django-react-blog",
+  "version": "1.0.0",
+  "authors": [
+    "Dan Sackett <danesackett@gmail.com>"
+  ],
+  "description": "Blog built with Django 1.8, React 0.13, and Flux 2.0",
+  "main": "Gulpfile.js",
+  "keywords": [
+    "django",
+    "react",
+    "flux",
+    "gulpjs"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/dansackett/django-react-blog",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/static/third-party",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "fontawesome": "~4.3.0",
+    "jquery": "~2.1.4"
+  }
+}

@@ -1,0 +1,9 @@
+-r base.txt
+
+Fabric==1.10.1
+Werkzeug==0.10.4
+bpython==0.14.2
+coverage==3.7.1
+django-extensions==1.5.5
+django-test-plus==1.0.4
+mock==1.0.1
