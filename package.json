@@ -17,7 +17,7 @@
     "gulpjs"
   ],
   "author": "Dan Sackett",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/codezeus/django-react-blog/issues"
   },
