@@ -1,5 +1,5 @@
 var keyMirror = require('react/lib/keyMirror');
 
 module.exports = keyMirror({
-    // CONSTANT: null, // my constant
+    SET_ACTIVE_LINK: null, // Setting the active link
 });

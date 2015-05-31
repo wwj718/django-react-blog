@@ -1,6 +1,7 @@
 var React       = require('react');
 var AppActions  = require('../actions/AppActions');
 var AppStore    = require('../stores/AppStore');
+var Navigation  = require('./Navigation.react');
 
 function getAppState(props) {
     return {
@@ -23,12 +24,15 @@ var Blog = React.createClass({
 
     render: function() {
         return (
-            <div id="blog" className="container">
+            <div className="container">
                 <div className="row">
-                    <h1 className="page-title">
-                        Hello, {this.state.name} <small>How are you doing?</small>
-                    </h1>
-                    <p>This is a cool React-based Blog application</p>
+                    <Navigation></Navigation>
+                    <div>
+                        <h1 className="page-title">
+                            Hello, {this.state.name} <small>How are you doing?</small>
+                        </h1>
+                        <p>This is a cool React-based Blog application</p>
+                    </div>
                 </div>
             </div>
         );

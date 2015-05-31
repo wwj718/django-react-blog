@@ -2,9 +2,10 @@ var AppDispatcher   = require('../dispatcher/AppDispatcher');
 var AppConstants    = require('../constants/AppConstants');
 
 var AppActions = {
-    action: function(count) {
+    setActiveLink: function(link) {
         AppDispatcher.handleAction({
-            actionType: AppConstants.CONSTANT
+            actionType: AppConstants.SET_ACTIVE_LINK,
+            link: link
         })
     },
 };
