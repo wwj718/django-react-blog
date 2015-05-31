@@ -13,12 +13,12 @@ var AboutPage       = require('./pages/About');
 
 // Create the routes
 var routes = (
-    /* jshint ignore:start */
-    <Route name="app" handler={Blog} path="/">
-        <DefaultRoute name="home" handler={PostsPage} />
-        <Route name="about" handler={AboutPage} />
-    </Route>
-    /* jshint ignore:end */
+  /* jshint ignore:start */
+  <Route name="app" handler={Blog} path="/">
+    <DefaultRoute name="home" handler={PostsPage} />
+    <Route name="about" handler={AboutPage} />
+  </Route>
+  /* jshint ignore:end */
 );
 
 module.exports = routes;
