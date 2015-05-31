@@ -1,12 +1,11 @@
-var AppDispatcher   = require('../dispatcher/AppDispatcher');
+var AppDispatcher   = require('../AppDispatcher');
 var EventEmitter    = require('events').EventEmitter;
-var AppConstants    = require('../constants/AppConstants');
+var ActionTypes     = require('../constants/ActionTypes');
 var _               = require('underscore');
 
-var _name = null,
-    _activeLink = 'home';
+var _name = null;
 
-var AppStore = _.extend({}, EventEmitter.prototype, {
+var PostStore = _.extend({}, EventEmitter.prototype, {
     // Get name of user
     getName: function(props) {
         if (_name == null && props) {
@@ -14,16 +13,6 @@ var AppStore = _.extend({}, EventEmitter.prototype, {
         }
 
         return _name;
-    },
-
-    // Get active navigation link
-    getActiveLink: function() {
-        return _activeLink;
-    },
-
-    // Set active navigation link
-    setActiveLink: function(link) {
-        _activeLink = link;
     },
 
     // Emit change event
@@ -46,17 +35,16 @@ AppDispatcher.register(function(payload) {
     var action = payload.action;
 
     switch(action.actionType) {
-        case AppConstants.SET_ACTIVE_LINK:
-            AppStore.setActiveLink(action.link);
-            break;
+        // case ActionTypes.SET_ACTIVE_LINK:
+        //     break;
 
         default:
             return true;
     }
 
-    AppStore.emitChange();
+    PostStore.emitChange();
 
     return true;
 });
 
-module.exports = AppStore;
+module.exports = PostStore;

@@ -3,3 +3,12 @@
  *
  * Override the Bootstrap 3 components.
  */
+
+.navbar-brand {
+    padding: 8px 15px;
+    text-transform: uppercase;
+}
+
+.fa-code {
+    font-weight: 900;
+}

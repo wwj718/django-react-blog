@@ -5,7 +5,7 @@ var app             = express();
 
 jsx_compiler.install();
 
-var Blog            = require('../../src/static/js/components/Blog.react');
+var Blog            = require('../../src/static/js/components/Blog');
 var BlogFactory     = React.createFactory(Blog);
 
 var Components = {

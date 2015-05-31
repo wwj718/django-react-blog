@@ -1,30 +1,7 @@
 var React       = require('react');
-var AppActions  = require('../actions/AppActions');
-var AppStore    = require('../stores/AppStore');
-
-function getAppState(props) {
-    return {
-        active_link: AppStore.getActiveLink()
-    };
-}
+var Link        = require('react-router').Link;
 
 var Navigation = React.createClass({
-    getInitialState: function() {
-        return getAppState(this.props);
-    },
-
-    componentDidMount: function() {
-        AppStore.addChangeListener(this._onChange);
-    },
-
-    componentWillUnmount: function() {
-        AppStore.removeChangeListener(this._onChange);
-    },
-
-    setActiveLink: function(link) {
-        AppActions.setActiveLink(link);
-    },
-
     render: function() {
         return (
             <nav className="navbar navbar-default">
@@ -36,21 +13,23 @@ var Navigation = React.createClass({
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                         </button>
-                        <a className="navbar-brand" href="#">Blog</a>
+                        <Link to="app" className="navbar-brand">
+                            <span className="fa-stack fa-2x">
+                                <i className="fa fa-circle-thin fa-stack-2x"></i>
+                                <i className="fa fa-code fa-stack-1x fa"></i>
+                            </span>
+                        </Link>
                     </div>
 
                     <div className="collapse navbar-collapse" id="navbar_collapse">
                         <ul className="nav navbar-nav">
-                            <li onClick={this.setActiveLink('home')} className="active"><a href="#">Home</a></li>
+                            <li><Link to="app">Home</Link></li>
+                            <li><Link to="about">About</Link></li>
                         </ul>
                     </div>
                 </div>
             </nav>
         );
-    },
-
-    _onChange: function() {
-        this.setState(getAppState(null));
     }
 });
 
