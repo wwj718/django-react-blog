@@ -1,3 +1,5 @@
+'use strict';
+
 // Compile all JSX on the fly
 require('node-jsx').install();
 

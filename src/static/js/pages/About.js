@@ -1,8 +1,16 @@
-var React               = require('react');
+'use strict';
 
+var React = require('react');
+
+// About Component
 var About = React.createClass({
+    /**
+     * Render the component
+     * @return  {Object}
+     */
     render: function() {
         return (
+            /* jshint ignore:start */
             <div className="container">
                 <div className="row">
                     <h1 className="page-title">
@@ -11,6 +19,7 @@ var About = React.createClass({
                     <p>About this blog</p>
                 </div>
             </div>
+            /* jshint ignore:end */
         );
     }
 });

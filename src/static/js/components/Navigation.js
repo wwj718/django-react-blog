@@ -1,9 +1,17 @@
+'use strict';
+
 var React       = require('react');
 var Link        = require('react-router').Link;
 
+// Navigation Component
 var Navigation = React.createClass({
+    /**
+     * Render the component
+     * @return  {Object}
+     */
     render: function() {
         return (
+            /* jshint ignore:start */
             <nav className="navbar navbar-default">
                 <div className="container-fluid">
                     <div className="navbar-header">
@@ -29,6 +37,7 @@ var Navigation = React.createClass({
                     </div>
                 </div>
             </nav>
+            /* jshint ignore:end */
         );
     }
 });
