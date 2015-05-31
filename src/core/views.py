@@ -7,13 +7,13 @@ def index(request):
     """
     Main Index Loader for React Application
 
-    This function stands as the entrypoint for the React Application. It
+    This function stands as the entry point for the React Application. It
     should hit the node server and get the rendered string back. Then we can
     return the string and load it on initial page load for a full SSR website.
     """
 
     props = { 'initialName': 'Dan' }
-    blog_component = react_render('Blog', props)
+    blog_component = react_render(props)
 
     context = {
         'blog_component': blog_component,

@@ -6,4 +6,3 @@ var target      = document.getElementById('wrapper');
 Router.run(routes, Router.HistoryLocation, function(Handler) {
     React.render(<Handler initial={document.props} />, target);
 });
-
