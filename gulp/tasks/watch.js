@@ -12,6 +12,6 @@ var startBrowserSync  = require('../utils/startBrowserSync');
 gulp.task('watch', ['build', 'server'], function() {
   startBrowserSync();
   gulp.watch(config.sass.src, ['sass']);
-  gulp.watch(config.js.src, ['js', 'browserify', 'server']);
+  gulp.watch(config.js.src, ['browserify', 'server']);
   gulp.watch(config.templates.src, ['templates']);
 });

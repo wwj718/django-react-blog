@@ -56,10 +56,9 @@ gulp.task('browserify', function(callback) {
         bundleQueue--;
         if (bundleQueue === 0) {
           callback();
-          browserSync.reload();
-        } else {
-          browserSync.reload();
         }
+
+        browserSync.reload();
       }
     };
 

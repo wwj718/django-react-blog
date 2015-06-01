@@ -50,14 +50,8 @@ module.exports = {
 
   // Compile our JS files
   js: {
-    src: [
-      src + 'js/app.js',
-      src + 'js/**/*.js'
-    ],
-    dest: dest + 'js',
-    settings: {
-      bare: true
-    }
+    src: dest + 'js/app_dist.js',
+    dest: dest + 'js/app_dist.js'
   },
 
   // Minimize Images

@@ -11,6 +11,6 @@ outputLogo();
  * Task to build the application
  * @return {Void}
  */
-gulp.task('build', ['js', 'browserify', 'sass', 'imageOptimize', 'third_party'], function(){
+gulp.task('build', ['browserify', 'sass', 'imageOptimize', 'third_party'], function(){
   global.isBuilding = false;
 });
