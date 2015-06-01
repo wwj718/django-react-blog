@@ -16,7 +16,7 @@ var NotFoundPage    = require('./pages/NotFound');
 var routes = (
   /* jshint ignore:start */
   <Route name="app" handler={Blog} path="/">
-    <DefaultRoute handler={PostsPage} />
+    <DefaultRoute name="home" handler={PostsPage} />
     <Route name="about" handler={AboutPage} />
     <NotFoundRoute name="NotFound" handler={NotFoundPage}/>
   </Route>
