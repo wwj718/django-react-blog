@@ -3,3 +3,4 @@ src/static/third-party/
 node_modules/
 var/www/
 npm-debug.log
+src/core/db.sqlite3
