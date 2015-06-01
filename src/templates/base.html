@@ -85,13 +85,13 @@
 
     <main class="wrap  clear" role="main">
         {% block content %}{% endblock %}
-
-        {% block props %}{% endblock %}
     </main>
 
     <footer role="contentinfo">
 
     </footer>
+
+    {% block props %}{% endblock %}
 
     <script src="{% static 'js/dependencies.js' %}"></script>
     <script src="{% static 'js/app_dist.js' %}"></script>
