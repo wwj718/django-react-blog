@@ -17,6 +17,11 @@ app.get('/', function (req, res) {
     var factory = React.createFactory(Handler);
     var currentRoute = routeState.routes.pop();
 
+    // Catch 404 Errors
+    if (currentRoute.name === 'NotFound') {
+      res.status(404);
+    }
+
     res.send(React.renderToString(factory(data)));
   });
 });

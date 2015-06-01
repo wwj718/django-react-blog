@@ -10,13 +10,15 @@ var NotFoundRoute   = Router.NotFoundRoute;
 // Page Handlers
 var PostsPage       = require('./pages/Posts');
 var AboutPage       = require('./pages/About');
+var NotFoundPage    = require('./pages/NotFound');
 
 // Create the routes
 var routes = (
   /* jshint ignore:start */
   <Route name="app" handler={Blog} path="/">
-    <DefaultRoute name="home" handler={PostsPage} />
+    <DefaultRoute handler={PostsPage} />
     <Route name="about" handler={AboutPage} />
+    <NotFoundRoute name="NotFound" handler={NotFoundPage}/>
   </Route>
   /* jshint ignore:end */
 );
