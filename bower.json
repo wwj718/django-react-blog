@@ -13,7 +13,7 @@
     "gulpjs"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/dansackett/django-react-blog",
+  "homepage": "https://github.com/codezeus/django-react-blog",
   "ignore": [
     "**/.*",
     "node_modules",
