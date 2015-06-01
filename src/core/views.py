@@ -13,7 +13,7 @@ def index(request):
     """
 
     props = { 'initialName': 'Dan' }
-    blog_component = react_render(props)
+    blog_component = react_render(request.get_full_path(), props)
 
     context = {
         'blog_component': blog_component,

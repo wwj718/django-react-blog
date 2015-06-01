@@ -6,28 +6,28 @@ require('node-jsx').install();
 var express         = require('express');
 var React           = require('react');
 var Router          = require('react-router');
-var app             = express();
+var server          = express();
 var routes          = require('../../src/static/js/router');
 
-// Handle getting the current route for SSR
-app.get('/', function (req, res) {
+/**
+ * Handle the SSR rendering of our Blog application
+ * @param  {Object}  req  Request
+ * @param  {Object}  res  Response
+ * @return {Void}
+ */
+function renderBlog(req, res) {
   var data = { initial: JSON.parse(req.query.data) };
 
-  Router.run(routes, function(Handler, routeState) {
+  Router.run(routes, req.query.url, function(Handler, routeState) {
     var factory = React.createFactory(Handler);
-    var currentRoute = routeState.routes.pop();
-
-    // Catch 404 Errors
-    if (currentRoute.name === 'NotFound') {
-      res.status(404);
-    }
-
     res.send(React.renderToString(factory(data)));
   });
-});
+}
 
-// Run the Node server
-var server = app.listen(4000, function () {
-  var port = server.address().port;
-  console.log('...listening on port %s', port);
+// Use render function for routes
+server.use(renderBlog);
+
+// Build server listener
+server.listen(4000, function () {
+  console.log('...listening on port 4000');
 });

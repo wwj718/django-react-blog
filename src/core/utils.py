@@ -6,7 +6,7 @@ from django.conf import settings
 from django.utils.safestring import mark_safe
 
 
-def react_render(ctx=None):
+def react_render(url, ctx=None):
     """
     Create a ReactJS string for return.
 
@@ -14,7 +14,7 @@ def react_render(ctx=None):
     back to give us SEO and faster initial page loads.
     """
 
-    params = { 'data': json.dumps(ctx or {}) }
+    params = { 'url': url, 'data': json.dumps(ctx or {}) }
 
     try:
         response = requests.get(settings.NODE_SERVER, params=params)
