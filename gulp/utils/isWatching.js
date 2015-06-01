@@ -1,3 +1,5 @@
+'use strict';
+
 var argv = require('yargs').argv;
 
 // > gulp            // true

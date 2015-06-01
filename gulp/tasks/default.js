@@ -1,3 +1,5 @@
-var gulp        = require('gulp');
+'use strict';
+
+var gulp = require('gulp');
 
 gulp.task('default', ['watch']);
