@@ -1,15 +1,52 @@
 <!DOCTYPE html>
+
+             .....~
+           . O7O...Z~
+       .. O,+..87... ~O.
+        OOO+I.8$O?8O,..O
+       .ZZ~I+OOO:.Z... OO
+        O$OO..    = $+:,O.
+       .=.             ,O
+        ...OOO ... .   ,O
+        =. =_ $OOO ~   ,O
+       .? :..+~~.ZO?   ,O
+    ~~ ?. O.=....?O .  .O.
+    O..O  O  ...  O  .  O$.
+       . OIO,OO7 ?   ?    O>
+       .O.:.. .....O..  =O.
+       .  O   ...:.,.   O.
+          O7.  , .     ,O.
+    7?+:  O$.. +. O    ,O
+    +O  .OI ..O  O : . ,O
+      IZO7.  O.   . :  ,O
+     ..O7=+.+.O+.O..,= ,O
+      .O? .O=O.O ,, .$.+O.
+       .~Z?. O~ , .ZO  O?
+              OO$IOO..ZI~
+              .....I~
+
 <html lang="en">
 <head>
+
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+
+    <meta http-equiv="cleartype" content="on">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <meta name="description" content="">
     <meta name="author" content="Dan Sackett">
 
     {% load staticfiles %}
 
     <title>Django React Blog</title>
+
+    <!--link rel="shortcut icon" href="/favicon.png"-->
+    <!--link rel="apple-touch-icon-precomposed" href="/favicon.png"-->
+
+    <!--link rel="author" href="/humans.txt"-->
+
+    <!--meta name="theme-color" content="#5f8aa6"-->
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{% static 'css/dependencies.min.css' %}">
@@ -22,10 +59,37 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-</head>
-<body>
 
-    <div id="wrapper">{% block content %}{% endblock %}</div>
+    <!-- Twitter Microdata and OpenGraph -->
+    <!--meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@TWITTERHANDLE">
+    <meta name="twitter:title" content="TITLE">
+    <meta name="twitter:description" content="DESCRIPTION">
+    <meta name="twitter:image:src" content="IMAGE">
+    <meta name="twitter:domain" content="DOMAIN">
+
+    <meta property="og:title" content="TITLE">
+    <meta property="og:description" content="DESCRIPTION">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="DOMAIN">
+    <meta property="og:image" content="IMAGE"-->
+
+</head>
+<body class="page-" itemscope itemtype="http://data-vocabulary.org/WebPage">
+
+    <header role="banner">
+        <!--nav class="nav-primary" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+
+        </nav-->
+    </header>
+
+    <main class="wrap  clear" role="main">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer role="contentinfo">
+
+    </footer>
 
     {% block props %}{% endblock %}
 
