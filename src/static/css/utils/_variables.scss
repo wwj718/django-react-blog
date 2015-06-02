@@ -1,0 +1,41 @@
+//
+// #UTILS - Variables
+// Common variables for easy reuse in project.
+//
+
+/// Wrapper and @media $variables
+$wrapper-padding:      1.25rem  !default;
+$max-wrapper-width:    1000px   !default;
+$medium-wrapper-width:  800px   !default;
+$small-wrapper-width:   500px   !default;
+$breakpoints:  (
+    "large":   $max-wrapper-width,
+    "medium":  $medium-wrapper-width,
+    "small":   $small-wrapper-width
+)  !default; // overwrite include-media.scss
+
+/// Layout $variables
+$default-margin:         $wrapper-padding  !default;
+$default-padding:        2.000rem          !default;
+$default-border:         0.250rem          !default;
+$default-border-radius:  0.250rem          !default;
+
+/// Opacity $variables
+$opacity-low:     0.10  !default;
+$opacity-medium:  0.35  !default;
+$opacity-high:    0.85  !default;
+
+/// Color $variables
+$brand:  #BAD455  !default;
+
+/// Font $variables
+$base-font-size:        16px  !default;
+$base-line-height:      1.5   !default;
+$primary-font-stack:    Georgia, serif      !default;
+$secondary-font-stack:  sans-serif          !default;
+$heading-font-stack:    Impact, sans-serif  !default;
+$code-font-stack:       monospace           !default;
+
+/// Transition $variables
+$transition-time:      0.22s  !default;
+$transition-function:  ease   !default;

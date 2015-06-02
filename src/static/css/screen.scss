@@ -1,14 +1,41 @@
-/* VENDOR MODULES */
+@charset "UTF-8";
+/*! Django React Blog */
+/**
+ * @version 1.0.1
+ * @author  Dan Sackett (dansackett.me)
+ * @author  Jesse Boywer (jream.com)
+ * @author  Chris Burnell (chrisburnell.com)
+ */
+
+// #GENERIC
+@import "generic/box-sizing";
+
+// #VENDOR
 @import "vendor/normalize";
 
-/* CONFIG */
-@import "variables";
-
-/* UTILITY MODULES */
+// #UTILS
+@import "utils/variables";
+@import "utils/include-media";
 @import "utils/mixins";
 @import "utils/bootstrap_overrides";
 
-/* COMMON MODULES */
-@import "common/elements";
-@import "common/forms";
-@import "common/buttons";
+// #BASE
+@import "base/page";
+@import "base/typography";
+@import "base/forms";
+@import "base/buttons";
+
+// #LAYOUT
+@import "layout/wrap";
+@import "layout/header";
+@import "layout/footer";
+
+// #COMPONENTS
+
+// #PAGES
+
+// #THEMES
+
+// #HELPERS/TRUMPS
+@import "utils/placeholders",
+        "utils/helpers";

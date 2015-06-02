@@ -1,0 +1,13 @@
+/**
+ * #UTILS - Placeholders
+ */
+
+%rounded {
+    background-clip: padding-box;
+    border-radius: $default-border-radius;
+}
+
+%non-selectable {
+    user-select: none;
+    -webkit-touch-callout: none;
+}
