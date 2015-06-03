@@ -9,12 +9,17 @@
  *   </section>
  *
  * Limitations:
- *   - `.grid` cannot be applied to an element with `.wrap`; must be a child
+ *   - `.grid--gutters` cannot be applied to an element with `.wrap`,
+       `.grid--gutters` would have to be a child of `.wrap`
  */
 
-[class*="grid"],
+// Careful not to accidentally target `.grid-item`
+[class="grid"],
+[class*="grid--"],
 [class*="row"] {
+    @extend .clear;
     display: flex;
+    flex-wrap: wrap;
 }
     .grid--top,
     .row--top {
