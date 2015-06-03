@@ -40,12 +40,26 @@ module.exports = {
 
   // Compile our SCSS files
   sass: {
-    src: [
-      src + 'css/screen.scss',
-      src + 'css/**/*.scss'
-    ],
+    src: src + 'css/**/*.scss',
     dest: dest + 'css',
-    settings: {}
+    settings: {
+      style: 'expanded'
+    }
+  },
+
+  // Autoprefix our compiled CSS
+  autoprefixer: {
+    settings: {
+      browsers: ['last 2 versions']
+    }
+  },
+
+  // Minimize our compiled CSS
+  minifycss: {
+    settings: {
+      advanced: false,
+      roundingPrecision: 3
+    }
   },
 
   // Compile our JS files
