@@ -1,6 +1,5 @@
 /**
  * #LAYOUT - Grid
- * TODO: Move into layout folder
  *
  * Usage:
  *   <section class="grid">
@@ -10,45 +9,56 @@
  *   </section>
  *
  * Limitations:
- *   - `.grid` cannot also be applied to an element with `.wrap`
+ *   - `.grid` cannot be applied to an element with `.wrap`; must be a child
  */
 
-.grid {
+.grid,
+.row {
     display: flex;
 }
-    .grid--top {
+    .grid--top,
+    .row--top {
         align-items: flex-start;
     }
-    .grid--bottom {
+    .grid--bottom,
+    .row--bottom {
         align-items: flex-end;
     }
-    .grid--center {
+    .grid--center,
+    .row--bottom {
         align-items: center;
     }
-    .grid--gutters {
+    .grid--gutters,
+    .row--gutters {
         margin: -#{$grid-gutter} 0 0 -#{$grid-gutter};
-        & > .grid-item {
+        & > .grid-item, & > .column {
             padding: #{$grid-gutter} 0 0 #{$grid-gutter};
         }
     }
 
 
-.grid-item {
+.grid-item,
+.column {
     flex: 1;
 }
-    .grid-item--top {
+    .grid-item--top,
+    .column--top {
         align-self: flex-start;
     }
-    .grid-item--bottom {
+    .grid-item--bottom,
+    .column--bottom {
         align-self: flex-end;
     }
-    .grid-item--center {
+    .grid-item--center,
+    .column--center {
         align-self: flex-center;
     }
-    .grid-item--full {
+    .grid-item--full, .grid-item--whole, .grid-item--100,
+    .column--full, .column--whole, .column--100 {
         flex: 0 0 100%;
     }
-    .grid-item--half {
+    .grid-item--half, .grid-item--50,
+    .column--half, .column--50 {
         @include media(">small") {
             flex: 0 0 50%;
         }
@@ -56,15 +66,17 @@
             flex: 0 0 100%;
         }
     }
-    .grid-item--third {
+    .grid-item--third, .grid-item--33,
+    .column--third, .column--33 {
         @include media(">small") {
-            flex: 0 0 33.3333%;
+            flex: 0 0 33.333%;
         }
         @include media("<=small") {
             flex: 0 0 100%;
         }
     }
-    .grid-item--fourth, .grid-item--quarter {
+    .grid-item--fourth, .grid-item--quarter, .grid-item--25,
+    .column--fourth, .column--quarter, .column--25 {
         @include media(">medium") {
             flex: 0 0 25%;
         }
@@ -75,8 +87,24 @@
             flex: 0 0 100%;
         }
     }
-
-
-
-
-
+    .grid-item--fifth, .grid-item--20,
+    .column--fifth, .column--20 {
+        @include media(">medium") {
+            flex: 0 0 20%;
+        }
+        @include media("<=medium") {
+            flex: 0 0 100%;
+        }
+    }
+    .grid-item--sixth, .grid-item--16,
+    .column--sixth, .column--16 {
+        @include media(">medium") {
+            flex: 0 0 16.666%;
+        }
+        @include media("<=medium") {
+            flex: 0 0 33.333%;
+        }
+        @include media("<=small") {
+            flex: 0 0 100%;
+        }
+    }
