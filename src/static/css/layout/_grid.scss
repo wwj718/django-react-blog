@@ -5,15 +5,15 @@
  *   <section class="grid">
  *       <div class="grid-item"></div>
  *       <div class="grid-item"></div>
- *       <div class="grid-item"></div>
+ *       <div class="grid-item--top"></div>
  *   </section>
  *
  * Limitations:
  *   - `.grid` cannot be applied to an element with `.wrap`; must be a child
  */
 
-.grid,
-.row {
+[class*="grid"],
+[class*="row"] {
     display: flex;
 }
     .grid--top,
@@ -30,15 +30,15 @@
     }
     .grid--gutters,
     .row--gutters {
-        margin: -#{$grid-gutter} 0 0 -#{$grid-gutter};
+        margin: -$grid-gutter 0 0 (-$grid-gutter / 2);
         & > .grid-item, & > .column {
-            padding: #{$grid-gutter} 0 0 #{$grid-gutter};
+            padding: $grid-gutter ($grid-gutter / 2);
         }
     }
 
 
-.grid-item,
-.column {
+[class*="grid-item"],
+[class*="column"] {
     flex: 1;
 }
     .grid-item--top,
