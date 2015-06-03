@@ -1,3 +1,4 @@
+import uuid
 from datetime import datetime
 
 from django.db import models
@@ -56,7 +57,7 @@ class Post(models.Model):
         ('published', 'Published'),
     )
 
-    hash = models.UUIDField()
+    hash = models.UUIDField(default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100)
     content = models.TextField()
