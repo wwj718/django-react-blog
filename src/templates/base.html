@@ -11,9 +11,6 @@
 
     <title>Django React Blog</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{% static 'css/dependencies.min.css' %}">
-
     <!-- Custom styles for this template -->
     <link href="{% static 'css/screen.css' %}" rel="stylesheet">
 
@@ -29,7 +26,6 @@
 
     {% block props %}{% endblock %}
 
-    <script src="{% static 'js/dependencies.js' %}"></script>
     <script src="{% static 'js/app_dist.js' %}"></script>
 
     {% if debug %}
