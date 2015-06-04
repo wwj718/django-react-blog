@@ -13,7 +13,8 @@ var RouteHandler        = require('react-router').RouteHandler;
  */
 function getAppState(props) {
   return {
-    name: PostStore.getName(props)
+    posts: PostStore.getPosts(props),
+    pagination: PostStore.getPagination(props)
   };
 }
 
@@ -50,11 +51,9 @@ var Blog = React.createClass({
   render: function() {
     return (
       /* jshint ignore:start */
-      <div className="container">
-        <div className="row">
-          <Navigation/>
-          <RouteHandler state={this.state}/>
-        </div>
+      <div>
+        <Navigation/>
+        <RouteHandler state={this.state}/>
       </div>
       /* jshint ignore:end */
     );

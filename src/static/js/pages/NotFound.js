@@ -2,7 +2,7 @@
 
 var React = require('react');
 
-// NotFound Component
+// NotFound Page Component
 var NotFound = React.createClass({
   /**
    * Render the component

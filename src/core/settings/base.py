@@ -41,6 +41,7 @@ DJANGO_APPS = (
 
 THIRD_PARTY_APPS = (
     'taggit',
+    'rest_framework',
 )
 
 LOCAL_APPS = (
@@ -110,3 +111,4 @@ TEMPLATES = [
 ###############################################################################
 
 NODE_SERVER = 'http://0.0.0.0:4000'
+POSTS_PER_PAGE = 5

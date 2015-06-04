@@ -6,21 +6,35 @@ var ActionTypes     = require('../constants/ActionTypes');
 var _               = require('underscore');
 
 // Private post variables
-var _name = null;
+var _posts = null,
+    _pagination = null;
 
 // Handle post actions
 var PostStore = _.extend({}, EventEmitter.prototype, {
   /**
-   * Get the name of the user
+   * Get posts
    * @param   {Object}  props  Initial props
    * @return  {String}
    */
-  getName: function(props) {
-    if (_name == null && props) {
-        _name = props.initialName;
+  getPosts: function(props) {
+    if (_posts == null && props) {
+        _posts = JSON.parse(props.initialPosts);
     }
 
-    return _name;
+    return _posts;
+  },
+
+  /**
+   * Get pagination
+   * @param   {Object}  props  Initial props
+   * @return  {String}
+   */
+  getPagination: function(props) {
+    if (_pagination == null && props) {
+        _pagination = JSON.parse(props.initialPagination);
+    }
+
+    return _pagination;
   },
 
   /**
