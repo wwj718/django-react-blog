@@ -50,7 +50,10 @@ module.exports = {
 
   // Compile our JS files
   js: {
-    src: dest + 'js/app_dist.js',
+    src: [
+      src + 'js/*.js',
+      src + 'js/**/*.js'
+    ],
     dest: dest + 'js/app_dist.js'
   },
 
