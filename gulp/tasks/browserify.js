@@ -29,7 +29,7 @@ gulp.task('browserify', function(callback) {
       entries: bundleConfig.entries,
       extensions: config.browserify.extensions,
       transform: config.browserify.transform,
-      debug: production ? false : true
+      debug: true
     });
 
     var bundle = function() {
@@ -56,9 +56,8 @@ gulp.task('browserify', function(callback) {
         bundleQueue--;
         if (bundleQueue === 0) {
           callback();
+          browserSync.reload();
         }
-
-        browserSync.reload();
       }
     };
 
