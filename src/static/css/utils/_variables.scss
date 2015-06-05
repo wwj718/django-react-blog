@@ -14,6 +14,9 @@ $breakpoints:  (
     "small":   $small-wrapper-width
 )  !default; // overwrite include-media.scss
 
+/// Grid $variables
+$grid-gutter-width:  1em  !default;
+
 /// Layout $variables
 $default-margin:         $wrapper-padding  !default;
 $default-padding:        2.000rem          !default;
@@ -26,7 +29,8 @@ $opacity-medium:  0.35  !default;
 $opacity-high:    0.85  !default;
 
 /// Color $variables
-$brand:  #BAD455  !default;
+$brand:       #bad455  !default;
+$text-color:  #333333  !default;
 
 /// Font $variables
 $base-font-size:        16px  !default;

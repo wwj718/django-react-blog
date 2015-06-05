@@ -1,0 +1,38 @@
+/*------------------------------------*\
+    #BASE - Typography (Code)
+\*------------------------------------*/
+
+code,
+kbd,
+samp,
+var,
+.monospace {
+    font-family: $code-font-stack;
+    line-height: 1.5;
+}
+    p code,
+    ol code,
+    ul code,
+    ins,
+    kbd,
+    mark,
+    samp,
+    var {
+        background-color: red;
+        padding: .25rem;
+        word-wrap: break-word;
+    }
+
+pre {
+    margin-top: 0; // override `normalize.css` and `margin-bottom` in `_layout.scss`
+    margin-bottom: $default-margin;
+    &:not(.codepen) {
+        overflow-x: auto;
+        overflow-y: hidden;
+        line-height: 1.5;
+        code {
+            min-width: 100%;
+            display: block;
+        }
+    }
+}
