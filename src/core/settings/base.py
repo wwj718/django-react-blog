@@ -111,4 +111,9 @@ TEMPLATES = [
 ###############################################################################
 
 NODE_SERVER = 'http://0.0.0.0:4000'
-POSTS_PER_PAGE = 5
+POSTS_PER_PAGE = 1
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': POSTS_PER_PAGE
+}
