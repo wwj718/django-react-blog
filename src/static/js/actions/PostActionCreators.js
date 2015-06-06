@@ -6,14 +6,13 @@ var ActionTypes     = require('../constants/ActionTypes');
 // Specify action endpoints
 var PostActionCreator = {
     /**
-     * Set an active link
-     * @param   {String}  link  Link to set
+     * Update pagination to new page
      * @return  {Void}
      */
-    setActiveLink: function(link) {
+    gotoPage: function(page_number) {
         AppDispatcher.handleAction({
-            actionType: ActionTypes.SET_ACTIVE_LINK,
-            link: link
+            actionType: ActionTypes.GOTO_PAGE,
+            page_number: page_number
         })
     },
 };

@@ -3,6 +3,7 @@
 var AppDispatcher   = require('../AppDispatcher');
 var EventEmitter    = require('events').EventEmitter;
 var ActionTypes     = require('../constants/ActionTypes');
+var request         = require('superagent');
 var _               = require('underscore');
 
 // Private post variables
@@ -38,6 +39,29 @@ var PostStore = _.extend({}, EventEmitter.prototype, {
   },
 
   /**
+   * Update page number
+   * @param   {String}  page_number  Page number
+   * @return  {Void}
+   */
+  gotoPage: function(page_number) {
+    var self = this;
+
+    request
+      .get('/api/posts?page=' + page_number)
+      .set('Accept', 'application/json')
+      .end(function(err, res){
+        var result = JSON.parse(res.text);
+
+        _posts = result.results;
+        _pagination['current_page'] = page_number;
+        _pagination['next_page'] = (result.next) ? true : false;
+        _pagination['prev_page'] = (result.previous) ? true : false;
+
+        self.emitChange();
+      });
+  },
+
+  /**
    * Emit the EventEmitter change event to send data downstream
    * @return  {Void}
    */
@@ -69,8 +93,9 @@ AppDispatcher.register(function(payload) {
   var action = payload.action;
 
   switch(action.actionType) {
-    // case ActionTypes.SET_ACTIVE_LINK:
-    //     break;
+    case ActionTypes.GOTO_PAGE:
+      PostStore.gotoPage(action.page_number);
+      break;
 
     default:
       return true;

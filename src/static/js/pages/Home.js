@@ -16,7 +16,13 @@ var Home = React.createClass({
           <h1>Hello, world!</h1>
           <p>This is the home page</p>
 
-          <PostList user='' query='' status='' posts={this.props.state.posts} />
+          <PostList
+            user=''
+            query=''
+            status=''
+            posts={this.props.state.posts}
+            pagination={this.props.state.pagination}
+          />
       </div>
       /* jshint ignore:end */
     );

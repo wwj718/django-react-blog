@@ -36,6 +36,9 @@ def get_pagination(posts, page):
 
     posts = posts[posts_start:posts_end]
 
+    if not posts:
+        page = 1
+
     pagination_vars = {
         'next_page': next_page,
         'prev_page': prev_page,

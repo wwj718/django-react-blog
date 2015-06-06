@@ -1,6 +1,6 @@
 import json
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from rest_framework.renderers import JSONRenderer
 
@@ -25,6 +25,10 @@ def index(request):
     # Gather initial DB data
     posts = Post.objects.get_published_posts()
     initial_pagination, posts = get_pagination(posts, page)
+
+    # If we're on an out of range page, protect against it
+    if not posts and int(page) != 1:
+        return redirect('index')
 
     # Build props response for initial frontend load
     props = {
