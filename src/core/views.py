@@ -20,7 +20,9 @@ def index(request):
     """
 
     # Find out if we have pagination
-    page = request.GET.get('page', None)
+    page = None
+    if 'page' in request.path.split('/'):
+        page = int(request.path.split('/')[2])
 
     # Gather initial DB data
     posts = Post.objects.get_published_posts()

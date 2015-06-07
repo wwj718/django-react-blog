@@ -15,7 +15,6 @@ var Posts = React.createClass({
    */
   gotoNextPage: function() {
     PostActionCreators.gotoPage(this.getNextPage());
-    this.transitionTo('home', null, {page: this.getNextPage()});
   },
 
   /**
@@ -24,7 +23,6 @@ var Posts = React.createClass({
    */
   gotoPrevPage: function() {
     PostActionCreators.gotoPage(this.getPrevPage());
-    this.transitionTo('home', null, {page: this.getPrevPage()});
   },
 
   /**
@@ -55,11 +53,11 @@ var Posts = React.createClass({
     var nextButton, prevButton;
 
     if (this.props.pagination.next_page) {
-      nextButton = <a onClick={this.gotoNextPage}>Next Page</a>;
+      nextButton = <Link to="page" params={{ page_number: this.getNextPage() }} onClick={this.gotoNextPage}>Next Page</Link>;
     }
 
     if (this.props.pagination.prev_page) {
-      prevButton = <a onClick={this.gotoPrevPage}>Previous Page</a>;
+      prevButton = <Link to="page" params={{ page_number: this.getPrevPage() }} onClick={this.gotoPrevPage}>Previous Page</Link>;
     }
 
     return (

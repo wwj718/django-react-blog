@@ -17,6 +17,7 @@ var routes = (
   /* jshint ignore:start */
   <Route name="app" handler={Blog} path="/">
     <DefaultRoute name="home" handler={HomePage} />
+    <Route name="page" handler={HomePage} path="page/:page_number" />
     <Route name="about" handler={AboutPage} />
     <NotFoundRoute name="NotFound" handler={NotFoundPage}/>
   </Route>
